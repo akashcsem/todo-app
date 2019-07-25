@@ -26,5 +26,3 @@ Route::get('/task/delete/{id}', 'TaskController@destroy')->name('task.delete');
 Route::get('/task/show/{id}', 'TaskController@show')->name('task.show');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

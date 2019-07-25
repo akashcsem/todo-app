@@ -9,12 +9,19 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-
-                    You are logged in!
+                    @foreach ($tasks as $task)
+                    <tr>
+                        <td>{{$task->name}}</td>
+                        <td><a style="float: right;" class="btn btn-danger mr-10"
+                                href="{{url('task/delete')}}/{{$task->id}}">Delete</a></td>
+                        <td><a class="btn btn-primary" style="float: right;"
+                                href="{{url('task/edit')}}/{{$task->id}}">Edit</a></td>
+                    </tr>
+                    @endforeach
                 </div>
             </div>
         </div>
