@@ -24,3 +24,5 @@ Route::get('/task/edit/{id}', 'TaskController@edit')->name('task.edit');
 Route::post('/task/update/', 'TaskController@update')->name('task.update');
 Route::get('/task/delete/{id}', 'TaskController@destroy')->name('task.delete');
 Route::get('/task/show/{id}', 'TaskController@show')->name('task.show');
+
+Auth::routes();
